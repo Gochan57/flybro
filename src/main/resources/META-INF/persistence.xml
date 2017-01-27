@@ -1,0 +1,5 @@
+<persistence>
+    <persistence-unit name="user-db">
+
+    </persistence-unit>
+</persistence>
