@@ -54,6 +54,5 @@ public class UserDTO {
 	public void setRolesId(List<Integer> rolesId) {
 		this.rolesId = rolesId;
 	}
-	
-	
+
 }

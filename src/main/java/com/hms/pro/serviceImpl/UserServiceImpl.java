@@ -1,6 +1,6 @@
 package com.hms.pro.serviceImpl;
 
-import java.util.List;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,19 +15,18 @@ import com.hms.pro.model.Role;
 import com.hms.pro.model.User;
 import com.hms.pro.service.UserService;
 
-
 @Service
 @Transactional
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 	static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
-	
-	@Autowired(required=true)
+
+	@Autowired(required = true)
 	private UserDao userDao;
 	@Autowired
 	UserCustomRepository userCustomRepository;
 
-	public List<User> findAll() {
-		return (List<User>) userCustomRepository.getAllUsers();
+	public Set<User> findAll() {
+		return (Set<User>) userCustomRepository.getAllUsers();
 	}
 
 	public void saveUser(UserDTO userDTO) {
@@ -37,15 +36,15 @@ public class UserServiceImpl implements UserService{
 		user.setName(userDTO.getName());
 		user.setPassword(userDTO.getPassword());
 		for (int i = 0; i < userDTO.getRolesId().size(); i++) {
-			   Role roleToAdd = userCustomRepository.findRoleById(userDTO.getRolesId().get(i));
-		       user.addRole(roleToAdd);
-		    }
+			Role roleToAdd = userCustomRepository.findRoleById(userDTO.getRolesId().get(i));
+			user.addRole(roleToAdd);
+		}
 
-		userDao.save(user);	
+		userDao.save(user);
 	}
 
 	public void deleteUser(Integer id) {
-		userDao.delete(id);		
+		userDao.delete(id);
 	}
 
 	public User getUser(Integer id) {
@@ -56,5 +55,4 @@ public class UserServiceImpl implements UserService{
 		this.userDao = userDao;
 	}
 
-	
 }

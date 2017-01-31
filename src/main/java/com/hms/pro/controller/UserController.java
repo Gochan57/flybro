@@ -1,6 +1,6 @@
 package com.hms.pro.controller;
 
-import java.util.List;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,7 +29,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	@ResponseBody
-    public List<User> findAll(@RequestParam(value="name", required=false) String name) {
+    public Set<User> findAll(@RequestParam(value="name", required=false) String name) {
         return userService.findAll();
     }
 	
