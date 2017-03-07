@@ -1,4 +1,4 @@
-package com.hms.pro.config;
+package com.volgadev.springtemplate.config;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 @PropertySource({ "classpath:globels.properties" })
-@EnableJpaRepositories(basePackages = "com.hms.pro.dao")
+@EnableJpaRepositories(basePackages = "com.volgadev.springtemplate.dao")
 public class JpaConfig {
 
 	private static Logger logger = Logger.getLogger(JpaConfig.class);

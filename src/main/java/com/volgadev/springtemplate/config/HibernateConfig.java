@@ -1,4 +1,4 @@
-package com.hms.pro.config;
+package com.volgadev.springtemplate.config;
 
 import java.util.Properties;
 
@@ -28,7 +28,7 @@ public class HibernateConfig {
 		LOGGER.info("DATASOURCE :" + dataSource);
 		LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
 		factoryBean.setDataSource(dataSource);
-		factoryBean.setPackagesToScan("com.hms.pro.model");
+		factoryBean.setPackagesToScan("com.volgadev.springtemplate.model");
 		factoryBean.setHibernateProperties(additionalProperties());
 		return factoryBean;
 	}

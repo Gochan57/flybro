@@ -1,4 +1,4 @@
-package com.hms.pro.config;
+package com.volgadev.springtemplate.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.hms.pro")
+@ComponentScan("com.volgadev.springtemplate")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 	@Override

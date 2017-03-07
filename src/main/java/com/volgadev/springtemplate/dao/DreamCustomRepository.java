@@ -1,11 +1,12 @@
-package com.hms.pro.dao;
+package com.volgadev.springtemplate.dao;
 
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.hms.pro.model.Dream;
+import com.volgadev.springtemplate.model.Dream;
+
 
 @Repository
 public class DreamCustomRepository {

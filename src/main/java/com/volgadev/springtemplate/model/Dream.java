@@ -1,15 +1,32 @@
-package com.hms.pro.dto;
+package com.volgadev.springtemplate.model;
 
 import java.sql.Date;
 
-import com.hms.pro.model.Dream;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-
-public class DreamDTO{
+@Entity
+@Table(name = "dreams")
+public class Dream{
+	@Id
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@Column(name = "altitude")
 	private double altitude;
-	private double longitude;		
-	private Date date;	
+	
+	@Column(name = "longitude")
+	private double longitude;
+		
+	@Column(name = "date")
+	private Date date;
+	
+	@Column(name = "id_user")
 	private int userId;
 	
 	public int getId() {
@@ -41,16 +58,6 @@ public class DreamDTO{
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
-	}
-	
-	public Dream castToDream(DreamDTO dto) {
-		Dream dream = new Dream();
-		dream.setId(dto.getId());
-		dream.setDate(dto.getDate());
-		dream.setAltitude(dto.getAltitude());
-		dream.setLongitude(dto.getLongitude());
-		dream.setUserId(dto.getUserId());
-		return dream;
 	}
 	
 }

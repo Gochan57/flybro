@@ -1,4 +1,4 @@
-package com.hms.pro.controller;
+package com.volgadev.springtemplate.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.hms.pro.dto.DreamDTO;
-import com.hms.pro.model.Dream;
-import com.hms.pro.service.DreamService;
+import com.volgadev.springtemplate.dto.DreamDTO;
+import com.volgadev.springtemplate.model.Dream;
+import com.volgadev.springtemplate.service.DreamService;
 
 
 

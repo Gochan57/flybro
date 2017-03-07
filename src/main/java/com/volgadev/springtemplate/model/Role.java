@@ -1,4 +1,4 @@
-package com.hms.pro.model;
+package com.volgadev.springtemplate.model;
 
 import static javax.persistence.GenerationType.IDENTITY;
 

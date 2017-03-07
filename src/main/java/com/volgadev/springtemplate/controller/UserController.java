@@ -1,4 +1,4 @@
-package com.hms.pro.controller;
+package com.volgadev.springtemplate.controller;
 
 import java.util.Set;
 
@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.hms.pro.dto.UserDTO;
-import com.hms.pro.model.User;
-import com.hms.pro.service.UserService;
+import com.volgadev.springtemplate.dto.UserDTO;
+import com.volgadev.springtemplate.model.User;
+import com.volgadev.springtemplate.service.UserService;
+
+
 
 @Controller
 @RequestMapping(value = "/users")

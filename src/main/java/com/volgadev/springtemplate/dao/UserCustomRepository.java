@@ -1,4 +1,4 @@
-package com.hms.pro.dao;
+package com.volgadev.springtemplate.dao;
 
 import java.util.HashSet;
 import java.util.List;
@@ -9,8 +9,10 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.hms.pro.model.Role;
-import com.hms.pro.model.User;
+import com.volgadev.springtemplate.model.Role;
+import com.volgadev.springtemplate.model.User;
+
+
 
 @Repository
 public class UserCustomRepository {

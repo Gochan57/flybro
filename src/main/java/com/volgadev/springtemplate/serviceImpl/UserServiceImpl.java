@@ -1,4 +1,4 @@
-package com.hms.pro.serviceImpl;
+package com.volgadev.springtemplate.serviceImpl;
 
 import java.util.Set;
 
@@ -8,12 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hms.pro.dao.UserCustomRepository;
-import com.hms.pro.dao.UserDao;
-import com.hms.pro.dto.UserDTO;
-import com.hms.pro.model.Role;
-import com.hms.pro.model.User;
-import com.hms.pro.service.UserService;
+import com.volgadev.springtemplate.dao.UserCustomRepository;
+import com.volgadev.springtemplate.dao.UserDao;
+import com.volgadev.springtemplate.dto.UserDTO;
+import com.volgadev.springtemplate.model.Role;
+import com.volgadev.springtemplate.model.User;
+import com.volgadev.springtemplate.service.UserService;
+
 
 @Service
 @Transactional

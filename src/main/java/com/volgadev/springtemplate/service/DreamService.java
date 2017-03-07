@@ -1,8 +1,8 @@
-package com.hms.pro.service;
+package com.volgadev.springtemplate.service;
 
 import java.util.List;
 
-import com.hms.pro.model.Dream;
+import com.volgadev.springtemplate.model.Dream;
 
 public interface DreamService {
 

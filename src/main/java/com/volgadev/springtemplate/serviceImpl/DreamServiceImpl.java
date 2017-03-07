@@ -1,4 +1,4 @@
-package com.hms.pro.serviceImpl;
+package com.volgadev.springtemplate.serviceImpl;
 
 import java.util.List;
 
@@ -6,9 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hms.pro.dao.DreamDao;
-import com.hms.pro.model.Dream;
-import com.hms.pro.service.DreamService;
+import com.volgadev.springtemplate.dao.DreamCustomRepository;
+import com.volgadev.springtemplate.dao.DreamDao;
+import com.volgadev.springtemplate.model.Dream;
+import com.volgadev.springtemplate.service.DreamService;
 
 @Service
 @Transactional
@@ -16,6 +17,9 @@ public class DreamServiceImpl implements DreamService {
 
 	@Autowired
 	private DreamDao dreamDao;
+
+	@Autowired
+	private DreamCustomRepository dreamCustomRepository;
 
 	@Override
 	@Transactional
@@ -38,7 +42,7 @@ public class DreamServiceImpl implements DreamService {
 	@Override
 	@Transactional
 	public Dream getDreamBuId(int id) {
-		return dreamDao.getDreamBuId(id);
+		return dreamCustomRepository.findDreamById(id);
 	}
 
 	@Override

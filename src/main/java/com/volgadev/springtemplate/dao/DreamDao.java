@@ -1,4 +1,4 @@
-package com.hms.pro.dao;
+package com.volgadev.springtemplate.dao;
 
 import java.util.List;
 
@@ -6,7 +6,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
-import com.hms.pro.model.Dream;
+import com.volgadev.springtemplate.model.Dream;
+
 
 @Repository
 public class DreamDao {
