@@ -16,30 +16,16 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class User implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "id", unique = true, nullable = false)
+	@Column(name = "user_id", unique = true, nullable = false)
 	private Integer id;
 
-	@Column(name = "name")
-	private String name;
-
-	@Column(name = "login")
-	private String login;
-
-	@Column(name = "password")
-	private String password;
-
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "user_roles", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
-			@JoinColumn(name = "role_id") })
-	private Set<Role> roles = new HashSet<>();
-
-	public User() {
-	}
+	@Column(name = "telegram_user_name")
+	private String telegramUserName;
 
 	public Integer getId() {
 		return id;
@@ -49,94 +35,32 @@ public class User implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+		User user = (User) o;
 
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public Set<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}
-
-	public void addRole(Role role) {
-		this.roles.add(role);
+		if (!id.equals(user.id)) return false;
+		return telegramUserName.equals(user.telegramUserName);
 	}
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-		result = prime * result + ((getLogin() == null) ? 0 : getLogin().hashCode());
-		result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
-		result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
-		result = prime * result + ((getRoles() == null) ? 0 : getRoles().hashCode());
+		int result = id.hashCode();
+		result = 31 * result + telegramUserName.hashCode();
 		return result;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (getId()  == null) {
-			if (other.getId()  != null)
-				return false;
-		} else if (!getId() .equals(other.getId() ))
-			return false;
-		if (getLogin() == null) {
-			if (other.getLogin()!= null)
-				return false;
-		} else if (!getLogin().equals(other.getLogin()))
-			return false;
-		if (getName() == null) {
-			if (other.getName() != null)
-				return false;
-		} else if (!getName().equals(other.getName()))
-			return false;
-		if (getPassword() == null) {
-			if (other.getPassword() != null)
-				return false;
-		} else if (!getPassword().equals(other.getPassword()))
-			return false;
-		if (getRoles() == null) {
-			if (other.getRoles() != null)
-				return false;
-		} else if (!getRoles().equals(other.getRoles()))
-			return false;
-		return true;
+	public User() {
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", login=" + login + "]";
+	public String getTelegramUserName() {
+		return telegramUserName;
 	}
 
+	public void setTelegramUserName(String telegramUserName) {
+		this.telegramUserName = telegramUserName;
+	}
 }

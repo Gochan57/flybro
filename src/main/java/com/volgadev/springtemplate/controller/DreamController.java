@@ -20,39 +20,32 @@ import com.volgadev.springtemplate.service.DreamService;
 @Controller
 @RequestMapping(value = "/dreams")
 public class DreamController {
-
 	@Autowired
 	private DreamService dreamService;
-
-
-	@Autowired
-	private DreamService DreamService;
-
-	
 
 	@RequestMapping(value = "/get", method = RequestMethod.GET)
 	@ResponseBody
 	public Dream findOne(@RequestParam Integer id) {
-		return DreamService.getDreamBuId(id);
+		return dreamService.getDreamBuId(id);
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.PUT)
 	@ResponseStatus(value = HttpStatus.OK)
 	@ResponseBody
 	public void addDream(@RequestBody DreamDTO dreamDTO) {
-			DreamService.addDream(dreamDTO.castToDream(dreamDTO));
+			dreamService.addDream(dreamDTO.castToDream(dreamDTO));
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
 	public void deleteDream(@RequestParam Integer id) {
-		this.DreamService.removeDream(id);
+		this.dreamService.removeDream(id);
 	}
 
 	@RequestMapping(value = "/edit", method = RequestMethod.POST)
 	@ResponseStatus(value = HttpStatus.OK)
 	@ResponseBody
 	public void editDream(@RequestBody DreamDTO dreamDTO) {
-		DreamService.updateDream(dreamDTO.castToDream(dreamDTO));
+		dreamService.updateDream(dreamDTO.castToDream(dreamDTO));
 	}
 
 }
