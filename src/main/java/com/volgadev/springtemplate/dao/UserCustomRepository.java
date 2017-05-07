@@ -9,7 +9,6 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.volgadev.springtemplate.model.Role;
 import com.volgadev.springtemplate.model.User;
 
 
@@ -35,11 +34,11 @@ public class UserCustomRepository {
 		return user;
 	}
 
-	public Role findRoleById(Integer id) {
-		Query query = sessionFactory.getCurrentSession().createQuery("SELECT r FROM Role r WHERE r.id = :ID");
-		query.setParameter("ID", id);
-		Role role = (Role) query.list().get(0);
-		return role;
-	}
+//	public Role findRoleById(Integer id) {
+//		Query query = sessionFactory.getCurrentSession().createQuery("SELECT r FROM Role r WHERE r.id = :ID");
+//		query.setParameter("ID", id);
+//		Role role = (Role) query.list().get(0);
+//		return role;
+//	}
 
 }

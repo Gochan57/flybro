@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.volgadev.springtemplate.dao.UserCustomRepository;
 import com.volgadev.springtemplate.dao.UserDao;
 import com.volgadev.springtemplate.dto.UserDTO;
-import com.volgadev.springtemplate.model.Role;
 import com.volgadev.springtemplate.model.User;
 import com.volgadev.springtemplate.service.UserService;
 
@@ -33,13 +32,13 @@ public class UserServiceImpl implements UserService {
 	public void saveUser(UserDTO userDTO) {
 		User user = new User();
 		user.setId(userDTO.getId());
-		user.setLogin(userDTO.getLogin());
-		user.setName(userDTO.getName());
-		user.setPassword(userDTO.getPassword());
-		for (int i = 0; i < userDTO.getRolesId().size(); i++) {
-			Role roleToAdd = userCustomRepository.findRoleById(userDTO.getRolesId().get(i));
-			user.addRole(roleToAdd);
-		}
+//		user.setLogin(userDTO.getLogin());
+//		user.setName(userDTO.getName());
+//		user.setPassword(userDTO.getPassword());
+//		for (int i = 0; i < userDTO.getRolesId().size(); i++) {
+//			Role roleToAdd = userCustomRepository.findRoleById(userDTO.getRolesId().get(i));
+//			user.addRole(roleToAdd);
+//		}
 
 		userDao.save(user);
 	}
