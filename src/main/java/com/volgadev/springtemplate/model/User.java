@@ -27,11 +27,11 @@ public class User implements java.io.Serializable {
 	@Column(name = "telegram_username")
 	private String telegramUsername;
 
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "user_to_flight",
-			joinColumns = @JoinColumn(name = "user_id", referencedColumnName="user_id"),
-			inverseJoinColumns = @JoinColumn(name = "flight_id", referencedColumnName="flight_id"))
-	private Set<Flight> flights  = new HashSet<Flight>(0);
+//	@ManyToMany(fetch = FetchType.LAZY)
+//	@JoinTable(name = "user_to_flight",
+//			joinColumns = @JoinColumn(name = "user_id", referencedColumnName="user_id"),
+//			inverseJoinColumns = @JoinColumn(name = "flight_id", referencedColumnName="flight_id"))
+//	private Set<Flight> flights  = new HashSet<Flight>(0);
 
 	public Integer getUserId() {
 		return userId;
@@ -49,11 +49,11 @@ public class User implements java.io.Serializable {
 		this.telegramUsername = telegramUsername;
 	}
 
-	public Set<Flight> getFlights() {
-		return this.flights;
-	}
-
-	public void setFlights(Set<Flight> flights) {
-		this.flights = flights;
-	}
+//	public Set<Flight> getFlights() {
+//		return this.flights;
+//	}
+//
+//	public void setFlights(Set<Flight> flights) {
+//		this.flights = flights;
+//	}
 }

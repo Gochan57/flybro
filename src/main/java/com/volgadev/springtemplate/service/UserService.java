@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.volgadev.springtemplate.dto.UserDTO;
+import com.volgadev.springtemplate.model.Flight;
 import com.volgadev.springtemplate.model.User;
 
 public interface UserService {
@@ -15,5 +16,7 @@ public interface UserService {
 	void deleteUser(Integer id);
 
 	User getUser(Integer id);
+
+	Set<Flight> getFlights(User user);
 
 }

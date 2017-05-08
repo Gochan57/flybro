@@ -3,6 +3,7 @@ package com.volgadev.springtemplate.serviceImpl;
 import java.util.List;
 import java.util.Set;
 
+import com.volgadev.springtemplate.model.Flight;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,5 +49,7 @@ public class UserServiceImpl implements UserService {
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
+
+	public Set<Flight> getFlights(User user) { return userCustomRepository.getFlights(user); }
 
 }

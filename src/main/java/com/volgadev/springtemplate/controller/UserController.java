@@ -3,6 +3,7 @@ package com.volgadev.springtemplate.controller;
 import java.util.List;
 import java.util.Set;
 
+import com.volgadev.springtemplate.model.Flight;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,6 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
-	 
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	@ResponseBody
@@ -59,4 +59,9 @@ public class UserController {
 		userService.saveUser(userDTO);
 	}
 
+	@RequestMapping(value = "/test",  method = RequestMethod.GET)
+	@ResponseBody
+	public Set<Flight> test() {
+		return userService.getFlights(userService.getUser(1));
+	}
 }
