@@ -1,5 +1,6 @@
 package com.volgadev.springtemplate.serviceImpl;
 
+import java.util.List;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -25,8 +26,8 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	UserCustomRepository userCustomRepository;
 
-	public Set<User> findAll() {
-		return (Set<User>) userCustomRepository.getAllUsers();
+	public List<User> findAll() {
+		return /*(List<User>) userCustomRepository.getAllUsers();*/ (List<User>)userDao.findAll();
 	}
 
 	public void saveUser(UserDTO userDTO) {
