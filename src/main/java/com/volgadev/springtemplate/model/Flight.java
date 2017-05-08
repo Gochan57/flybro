@@ -25,8 +25,8 @@ public class Flight {
     @Column(name = "DATE")
     private Date date;
 
-//    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "flights")
-//    private Set<User> users = new HashSet<User>(0);
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "flights")
+    private Set<User> users = new HashSet<User>(0);
 
     public String getFlightId() {
         return flightId;
@@ -36,11 +36,11 @@ public class Flight {
         this.flightId = flightId;
     }
 
-//    public Set<User> getUsers() {
-//        return this.users;
-//    }
-//
-//    public void setUsers(Set<User> users) {
-//        this.users = users;
-//    }
+    public Set<User> getUsers() {
+        return this.users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
 }
