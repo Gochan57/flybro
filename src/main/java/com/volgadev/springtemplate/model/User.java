@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "USER")
+@Table(name = "USER", schema = "public")
 public class User implements java.io.Serializable {
 
 	public User() {

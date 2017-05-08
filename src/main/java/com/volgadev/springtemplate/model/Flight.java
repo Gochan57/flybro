@@ -12,7 +12,7 @@ import static javax.persistence.GenerationType.IDENTITY;
  * Created by Julia on 07.05.2017.
  */
 @Entity
-@Table(name = "FLIGHT")
+@Table(name = "FLIGHT", schema = "public")
 public class Flight {
 
     @Id
