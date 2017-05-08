@@ -5,54 +5,23 @@ import java.util.List;
 
 public class UserDTO {
 
-	private Integer id;
+	private Integer userId;
 
-	private String name;
+	private String telegramUserName;
 
-	private String login;
+    public Integer getUserId() {
+        return userId;
+    }
 
-	private String password;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
-	List<Integer> rolesId = new ArrayList<>();
+    public String getTelegramUserName() {
+        return telegramUserName;
+    }
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public List<Integer> getRolesId() {
-		return rolesId;
-	}
-
-	public void setRolesId(List<Integer> rolesId) {
-		this.rolesId = rolesId;
-	}
-
+    public void setTelegramUserName(String telegramUserName) {
+        this.telegramUserName = telegramUserName;
+    }
 }

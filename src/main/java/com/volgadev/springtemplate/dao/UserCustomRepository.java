@@ -21,24 +21,16 @@ public class UserCustomRepository {
 
 	public Set<User> getAllUsers() {
 		Query query = sessionFactory.getCurrentSession()
-				.createQuery("SELECT u FROM User u , IN(u.roles) r ORDER BY u.id");
+				.createQuery("SELECT u FROM User u ORDER BY u.user_id");
 		List<User> list = (List<User>) query.list();
 		Set<User> result = new HashSet<User>(list);
 		return result;
 	}
 
-	public User findUserById(Integer id) {
-		Query query = sessionFactory.getCurrentSession().createQuery("SELECT u FROM User u WHERE u.id = :ID");
-		query.setParameter("ID", id);
+	public User findUserById(Integer userId) {
+		Query query = sessionFactory.getCurrentSession().createQuery("SELECT u FROM User u WHERE u.user_id = :ID");
+		query.setParameter("ID", userId);
 		User user = (User) query.list().get(0);
 		return user;
 	}
-
-//	public Role findRoleById(Integer id) {
-//		Query query = sessionFactory.getCurrentSession().createQuery("SELECT r FROM Role r WHERE r.id = :ID");
-//		query.setParameter("ID", id);
-//		Role role = (Role) query.list().get(0);
-//		return role;
-//	}
-
 }

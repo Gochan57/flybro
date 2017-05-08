@@ -1,19 +1,32 @@
 package com.volgadev.springtemplate.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
 /**
  * Created by Julia on 07.05.2017.
  */
+@Entity
+@Table(name = "FLIGHT")
 public class Flight {
 
     @Id
-    @Column(name = "flight_id", unique = true, nullable = false)
+    @Column(name = "FLIGHT_ID", unique = true, nullable = false)
     private String flightId;
+
+    @Column(name = "TELEGRAM_USERNAME")
+    private String telegramUserName;
+
+    @Column(name = "DATE")
+    private Date date;
+
+//    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "flights")
+//    private Set<User> users = new HashSet<User>(0);
 
     public String getFlightId() {
         return flightId;
@@ -22,4 +35,12 @@ public class Flight {
     public void setFlightId(String flightId) {
         this.flightId = flightId;
     }
+
+//    public Set<User> getUsers() {
+//        return this.users;
+//    }
+//
+//    public void setUsers(Set<User> users) {
+//        this.users = users;
+//    }
 }

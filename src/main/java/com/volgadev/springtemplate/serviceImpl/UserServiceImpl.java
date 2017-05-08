@@ -31,14 +31,7 @@ public class UserServiceImpl implements UserService {
 
 	public void saveUser(UserDTO userDTO) {
 		User user = new User();
-		user.setId(userDTO.getId());
-//		user.setLogin(userDTO.getLogin());
-//		user.setName(userDTO.getName());
-//		user.setPassword(userDTO.getPassword());
-//		for (int i = 0; i < userDTO.getRolesId().size(); i++) {
-//			Role roleToAdd = userCustomRepository.findRoleById(userDTO.getRolesId().get(i));
-//			user.addRole(roleToAdd);
-//		}
+		user.setUserId(userDTO.getUserId());
 
 		userDao.save(user);
 	}
