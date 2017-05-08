@@ -19,11 +19,10 @@ public class UserCustomRepository {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public Set<User> getAllUsers() {
+	public List<User> getAllUsers() {
 		Query query = sessionFactory.getCurrentSession()
-				.createQuery("SELECT u FROM User u , IN(u.roles) r ORDER BY u.id");
-		List<User> list = (List<User>) query.list();
-		Set<User> result = new HashSet<User>(list);
+				.createQuery("SELECT u FROM User u");
+		List<User> result = (List<User>) query.list();
 		return result;
 	}
 

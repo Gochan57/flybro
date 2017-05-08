@@ -35,7 +35,7 @@ public class HibernateConfig {
 
 	private Properties additionalProperties() {
 		Properties properties = new Properties();
-		properties.put("hibernate.dialect", org.hibernate.dialect.MySQLInnoDBDialect.class);
+		properties.put("hibernate.dialect", org.hibernate.dialect.PostgreSQL94Dialect.class);
 		properties.put("hibernate.show_sql", Boolean.TRUE);
 		properties.put("hibernate.format_sql", Boolean.TRUE);
 		properties.put("use_sql_comments", Boolean.TRUE);

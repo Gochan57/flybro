@@ -1,5 +1,6 @@
 package com.volgadev.springtemplate.controller;
 
+import java.util.List;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -31,7 +32,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	@ResponseBody
-    public Set<User> findAll(@RequestParam(value="name", required=false) String name) {
+    public List<User> findAll(@RequestParam(value="name", required=false) String name) {
         return userService.findAll();
     }
 	

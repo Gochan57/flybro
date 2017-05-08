@@ -1,5 +1,6 @@
 package com.volgadev.springtemplate.service;
 
+import java.util.List;
 import java.util.Set;
 
 import com.volgadev.springtemplate.dto.UserDTO;
@@ -7,7 +8,7 @@ import com.volgadev.springtemplate.model.User;
 
 public interface UserService {
 
-	Set<User> findAll();
+	List<User> findAll();
 
 	void saveUser(UserDTO userDTO);
 
